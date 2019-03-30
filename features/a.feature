@@ -1,4 +1,4 @@
 Feature: test
 
-Scenario: test
-	* Verify (1==1)
+  Scenario: test
+    * Verify (1==1)
