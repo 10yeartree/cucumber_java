@@ -3,7 +3,7 @@ package ngcp;
 import cucumber.api.java.Before;
 import cucumber.api.Scenario;
 
-public class hook {
+public class Hook {
 	public static Scenario world = null;
 	
 	@Before
