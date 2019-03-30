@@ -12,6 +12,6 @@
    -> java -cp "lib/*;bin" cucumber.api.cli.Main features -g 'ngcp'
    -> java -cp "lib/*;bin" cucumber.api.cli.Main features -g 'ngcp' -t @CASE=test   
    -> java -cp "lib/*;bin" cucumber.api.cli.Main features -g 'ngcp' -p pretty
-   -> java -cp "lib/*;bin" cucumber.api.cli.Main features -g 'ngcp' -p json:result.json
-   -> java -cp "lib/*;bin" cucumber.api.cli.Main features -g 'ngcp' -p html:htmlResult
+   -> java -cp "lib/*;bin" cucumber.api.cli.Main features -g 'ngcp' -p json:Result/result.json
+   -> java -cp "lib/*;bin" cucumber.api.cli.Main features -g 'ngcp' -p html:Result/htmlResult
    
