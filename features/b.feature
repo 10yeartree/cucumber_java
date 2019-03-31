@@ -1,15 +1,15 @@
 Feature: test_b
 Background:
     * Load value tree_value.csv
-    * Load object tree_object.csv    
+   # * Load object tree_object.csv    
 
 @CASE=site_map
-  Scenario: test
-    * Print current_sys_date_xyz
-    * Print current_sys_date    
-    * Modify bigmap current_sys_date value to "20181001"
-    * Print current_sys_date
+  Scenario: web map
+    * Open the browser
+    * Get url web_site_address
+    * Wait 5 seconds
+    * Close the browser
     
-@CASE=poem
-  Scenario: test
-    * Print current_sys_date
+#@CASE=poem
+  #Scenario: web poem
+    #* Open the browser

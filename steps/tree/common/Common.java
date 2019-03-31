@@ -29,4 +29,9 @@ public class Common {
 			Hook.world.write("Key:[" + name + "] not exist in bigmap");
 		}
 	}
+	
+	@Given("^Wait (\\d+) seconds$")
+	public void i_wait(int count) throws Exception {
+		Thread.sleep(count * 1000);
+	}
 }
