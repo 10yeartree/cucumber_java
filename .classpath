@@ -11,6 +11,7 @@
 	<classpathentry kind="lib" path="lib/gherkin-5.1.0.jar"/>
 	<classpathentry kind="lib" path="lib/hamcrest-core-1.3.jar"/>
 	<classpathentry kind="lib" path="lib/tag-expressions-1.1.1.jar"/>
-	<classpathentry kind="src" path="steps"/>	
+	<classpathentry kind="lib" path="lib/opencsv-2.3.jar"/>
+	<classpathentry kind="src" path="steps"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
