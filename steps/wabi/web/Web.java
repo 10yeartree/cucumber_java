@@ -11,7 +11,7 @@ public class Web {
 
 	@Given("^Open the browser$")
 	public void i_open_browser() throws Exception {
-		String driverType = System.getenv("BROWSER");
+		String driverType = System.getProperty("BROWSER");
 		if (driverType == null) {
 			driverType = "Chrome";
 		}

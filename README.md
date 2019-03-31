@@ -16,4 +16,5 @@
    -> java -cp "lib/*;bin" cucumber.api.cli.Main features -g 'tree' -p html:Result/htmlResult
    
    -> java -cp "lib/*;bin" cucumber.api.cli.Main features -g 'tree' -g 'wabi'
+   -> java -DBROWSER=Firefox -cp "lib/*;bin" cucumber.api.cli.Main features -g 'tree' -g 'wabi'
    
