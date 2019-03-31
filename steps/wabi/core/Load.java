@@ -13,8 +13,6 @@ import tree.Hook;
 public class Load {
 	@Given("^Load value (.*?)$")
 	public void i_load_value(String fileName) throws Exception {
-		Hook.bigmap.clear();
-
 		String path = "resource/" + fileName;
 		File file = new File(path);
 		if (!file.exists()) {
