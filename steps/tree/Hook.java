@@ -1,4 +1,4 @@
-package ngcp;
+package tree;
 
 import cucumber.api.java.Before;
 import cucumber.api.Scenario;
