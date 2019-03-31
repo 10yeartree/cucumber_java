@@ -1,6 +1,6 @@
 Feature: test_a
 Background:
-    * Load value ngcp_value.csv
+    * Load value tree_value.csv
 
 @CASE=test_bigmap
   Scenario: test

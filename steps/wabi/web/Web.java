@@ -1,8 +1,9 @@
 package wabi.web;
 
 import cucumber.api.java.en.Given;
+import tree.Hook;
 import org.openqa.selenium.chrome.ChromeDriver;
-import wabi.core.Load;
+
 
 public class Web {
 	public static ChromeDriver driver = null;
@@ -20,7 +21,7 @@ public class Web {
 	
 	@Given("^Get url (.*?)$")
 	public void i_open_browser(String url) throws Exception {
-		url = Load.bigmap.containsKey(url) ? Load.bigmap.get(url) : url;
+		url = Hook.bigmap.containsKey(url) ? Hook.bigmap.get(url) : url;
 		driver.get(url);
 	}
 }

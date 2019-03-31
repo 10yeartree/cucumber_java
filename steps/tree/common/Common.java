@@ -5,7 +5,6 @@ import javax.script.ScriptEngineManager;
 
 import cucumber.api.java.en.Given;
 import tree.Hook;
-import wabi.core.Load;
 
 public class Common {
 	@Given("^Verify \\((.*?)\\)$")
@@ -22,8 +21,8 @@ public class Common {
 
 	@Given("^Print (.*?)$")
 	public void i_print(String name) throws Exception {
-		if (Load.bigmap.containsKey(name)) {
-			String value = Load.bigmap.get(name);
+		if (Hook.bigmap.containsKey(name)) {
+			String value = Hook.bigmap.get(name);
 			Hook.world.write(name + " value is: " + value);
 		} else {
 			Hook.world.write("Key:[" + name + "] not exist in bigmap");
