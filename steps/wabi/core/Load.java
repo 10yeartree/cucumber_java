@@ -2,9 +2,7 @@ package wabi.core;
 
 import java.io.File;
 import java.io.FileReader;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import au.com.bytecode.opencsv.CSVReader;
 import cucumber.api.java.en.Given;
