@@ -9,6 +9,7 @@ Background:
     * Modify bigmap current_sys_date value to "20181001"
     * Print current_sys_date
     
+@start    
 @CASE=test1
   Scenario: test
     * Print current_sys_date

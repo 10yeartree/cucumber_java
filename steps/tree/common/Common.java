@@ -9,6 +9,8 @@ import tree.Hook;
 public class Common {
 	@Given("^Verify \\((.*?)\\)$")
 	public void i_verify(String str) throws Exception {
+		
+		
 		ScriptEngineManager manager = new ScriptEngineManager();
 		ScriptEngine se = manager.getEngineByName("js");
 		Boolean result = (Boolean) se.eval(str);
