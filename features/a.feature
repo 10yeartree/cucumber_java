@@ -11,5 +11,5 @@ Background:
     
 @start    
 @CASE=test1
-  Scenario: test
-    * Print current_sys_date
+  Scenario: test1
+    * Verify ("20180201" == current_sys_date)
