@@ -15,7 +15,9 @@ Background:
     * Open the browser
     * Get url web_site_address
     * Click the wenzi_menu
+    * Wait 2 seconds
     * Click the page_4
+    * Wait 2 seconds
     * Click the seven_step_poem
     * Wait 15 seconds
     * Close the browser
