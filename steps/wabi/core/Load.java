@@ -30,6 +30,26 @@ public class Load {
 			}
 		}
 	}
+	
+	@Given("^Load object (.*?)$")
+	public void i_load_obect(String fileName) throws Exception {
+		String path = "resource/" + fileName;
+		File file = new File(path);
+		if (!file.exists()) {
+			throw new Exception("[" + path + "]" + " not exist");
+		}
+
+		FileReader reader = new FileReader(file);
+		CSVReader csvReader = new CSVReader(reader);
+		List<String[]> arr = csvReader.readAll();
+
+		for (String[] i : arr) {
+			if (i.length == 3) {
+				Hook.obj_hash.put(i[0], i[1]);
+				Hook.acc_hash.put(i[0], i[2]);
+			}
+		}
+	}
 
 	@Given("^Modify bigmap (.*?) value to (.*?)$")
 	public void i_modify_value(String name, String value) throws Exception {

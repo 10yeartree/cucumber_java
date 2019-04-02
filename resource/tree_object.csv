@@ -1,0 +1,3 @@
+wenzi_menu,"//li[@id='tabnav_btn_4']/a",xpath
+page_4,"//div[@class='pageNav']/a[text()='4']",xpath
+seven_step_poem,"//div[@id='mainPage']/div[1]/div[5]/div[1]/h2/a",xpath
