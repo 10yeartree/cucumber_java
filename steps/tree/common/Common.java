@@ -10,17 +10,25 @@ import cucumber.api.java.en.Given;
 import tree.Hook;
 
 public class Common {
-	//only support string compare now
 	@Given("^Verify \\((.*?)\\)$")
 	public void i_verify(String str) throws Exception {
 		Set<String> sortSet = new TreeSet<String>((o1, o2) -> (o1.length() < o2.length() ? 1 : -1));
-		sortSet.addAll(Hook.bigmap.keySet());		
+		sortSet.addAll(Hook.bigmap.keySet());
 		for (String key : sortSet) {
 			if (str.contains(key)) {
-				if (Hook.bigmap.get(key).getClass().getSimpleName().equals("String")) {
+				Object value = Hook.bigmap.get(key);
+				if (value instanceof String) {
 					str = str.replace(key, "\"" + Hook.bigmap.get(key) + "\"");
-				} else{
-					throw new Exception("Only support string verify now");
+				} else if (value instanceof Integer) {
+					str = str.replace(key, Hook.bigmap.get(key).toString());
+				} else if (value instanceof Long) {
+					str = str.replace(key, Hook.bigmap.get(key).toString());
+				} else if (value instanceof Double) {
+					str = str.replace(key, Hook.bigmap.get(key).toString());
+				} else if (value instanceof Float) {
+					str = str.replace(key, Hook.bigmap.get(key).toString());
+				} else {
+					throw new Exception("Not supported bigmap value type");
 				}
 			}
 		}
@@ -38,7 +46,7 @@ public class Common {
 	@Given("^Print (.*?)$")
 	public void i_print(String name) throws Exception {
 		if (Hook.bigmap.containsKey(name)) {
-			String value = Hook.bigmap.get(name);
+			Object value = Hook.bigmap.get(name);
 			Hook.world.write(name + " value is: " + value);
 		} else {
 			Hook.world.write("Key:[" + name + "] not exist in bigmap");

@@ -9,12 +9,12 @@ import cucumber.api.Scenario;
 
 public class Hook {
 	public static Scenario world = null;
-	public static Map<String, String> bigmap = null;
+	public static Map<String, Object> bigmap = null;
 	
 	@Before
 	public void i_before(Scenario scenario) throws Exception {
 		this.world = scenario;
-		bigmap = new HashMap<String, String>();
+		bigmap = new HashMap<String, Object>();
 	}
 	
 	@Before("@start")
