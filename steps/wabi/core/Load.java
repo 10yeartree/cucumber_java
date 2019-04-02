@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.FileReader;
 import java.util.List;
 
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+
 import au.com.bytecode.opencsv.CSVReader;
 import cucumber.api.java.en.Given;
 import tree.Hook;
@@ -31,11 +34,18 @@ public class Load {
 	@Given("^Modify bigmap (.*?) value to (.*?)$")
 	public void i_modify_value(String name, String value) throws Exception {
 		if (Hook.bigmap.containsKey(name)) {
-			if (value.startsWith("\"")) {
-				value = value.substring(1, value.length()-1);
+			if (value.startsWith("\"") && value.endsWith("\"")) {
+				String result = value.substring(1, value.length() - 1);
+				Hook.bigmap.put(name, result);
+				Hook.world.write("Key:[" + name + "] new value is: " + result);
+			} else {
+				ScriptEngineManager manager = new ScriptEngineManager();
+				ScriptEngine se = manager.getEngineByName("js");
+
+				Object result = se.eval(value);
+				Hook.bigmap.put(name, result);
+				Hook.world.write("Key:[" + name + "] new value is: " + result);
 			}
-			Hook.bigmap.put(name, value);
-			Hook.world.write("Key:[" + name + "] new value is: " + value);
 		} else {
 			Hook.world.write("Key:[" + name + "] not exist in bigmap, ignore");
 		}
